@@ -5,23 +5,19 @@
     <title>grön park cafe | Terms of Services</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <link rel="stylesheet" href="src/css/animate.min.css">
-    <link rel="stylesheet" href="http://ae168exh56.smartrelease.jp/public/assets/plugins/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="src/css/jssocials.css" />
-    <link type="text/css" rel="stylesheet" href="src/css/jssocials-theme-flat.css" />
-    <link rel="stylesheet" href="http://ae168exh56.smartrelease.jp/public/assets/plugins/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://ae168exh56.smartrelease.jp/public/assets/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="src/css/jssocials.css" />
+    <link rel="stylesheet" href="src/css/jssocials-theme-flat.css" />
+    <link rel="stylesheet" href="src/css/main.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-    <script type="text/javascript" src="http://ae168exh56.smartrelease.jp/public/assets/plugins/pace-js/pace.min.js"></script>
-    <script type="text/javascript" src="http://ae168exh56.smartrelease.jp/public/assets/plugins/vue/dist/vue.min.js"></script>
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/jssocials.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
     <style>
         /*Reset*/
         html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -151,7 +147,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-                <a class="navbar-brand" href="index.html"><img src="http://ae168exh56.smartrelease.jp/public/assets/img/home.png"></a>
+                <a class="navbar-brand" href="index.html"><img src="src/img/home.png"></a>
             </div>
 
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -188,9 +184,9 @@
               <div class="m_boxes1">
                   <section class="box">
                       <div class="ind">
-                          <p>{{message}}</p>
+                          <p>グランパークをご利用のお客様は上記の注意事項をお守りの上、誓約書にご署名をお願い致します。</p>
                           <div class="row">
-                              <form id="form" name="customer" class="form-horizontal col-sm-10 hidden-print" v-on:submit.prevent="onSubmit" role="form" action="/api/v1/customer/create">
+                              <form id="form" name="customer" class="form-horizontal col-sm-10 hidden-print" role="form" action="#">
                                   <fieldset>
                                       <legend style="margin: 0 0 20px 10px;">《誓約書》</legend>
                                       <input type="hidden" name="type" value="mobile" placeholder="">
@@ -200,7 +196,7 @@
                                               <input required type="text" class="form-control" name="fullname" id="card-holder-name" placeholder="お申込み者様のお名前">
                                           </div>
                                           <div class="col-xs-12 col-sm-1 no-padding">
-                                              <button class="btn btn-primary action-add" type="button" v-on:click="addPers()">
+                                              <button class="btn btn-primary action-add" type="button">
                                                 <i class="fa fa-plus"></i>
                                               </button>
                                           </div>
@@ -403,7 +399,6 @@
                                               </div>
                                           </div>
                                       </div>
-                                      <person-bootstrap-select v-for="n in persons" :key-index="n"></person-bootstrap-select>
                                       <div class="form-group">
                                           <label class="col-sm-3 control-label" for="post">郵便番号</label>
                                           <div class="col-sm-3">
@@ -592,14 +587,14 @@
 
 <script>
     // Social Share
-          $("#share").jsSocials({
-              shares: ["email", "twitter", "facebook", "linkedin", "pinterest"]
-          });
-        
-          // Print window
-          function pagePrint() {
-              window.print();
-          }
+    $("#share").jsSocials({
+        shares: ["email", "twitter", "facebook", "linkedin", "pinterest"]
+    });
+  
+    // Print window
+    function pagePrint() {
+        window.print();
+    }
 </script>
 
 
@@ -622,12 +617,12 @@
 <!-- - -->
 <div class="container-fluid bottom-img hidden-print">
     <div class="row">
-        <img class="wide-img" src="http://ae168exh56.smartrelease.jp/public/assets/img/bottom-img.png">
+        <img class="wide-img" src="src/img/footer-img.jpg">
     </div>
 
     <div class="row bottom-footer">
         <div class="info text-center">
-            <img src="http://ae168exh56.smartrelease.jp/public/assets/img/logo2-1.png" style="width: auto;">
+            <img src="src/img/logo2-1.png" style="width: auto;">
             <h4><a href=""><i class="fa fa-phone-square" aria-hidden="true"></i></a> 0248-94-6656</h4>
             <p>© 2017 grön park cafe.</p>
             <ul class="list-inline">
@@ -637,68 +632,11 @@
             </ul>
         </div>
     </div>
-</div>
-<!-- container -->
-</body>
+</div><!-- container -->
+
 <!-- JS File -->
-<script src="http://ae168exh56.smartrelease.jp/public/assets/plugins/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>>
-<script src="src/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="src/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="src/js/bootstrap.min.js"></script>
 <!-- Application main.js -->
-<script type="text/javascript" src="src/js/main2.js"></script>
-<script type="text/javascript" src="http://ae168exh56.smartrelease.jp/public/assets/js/dist/main.js"></script>
-<script type="text/javascript">
-    var app = new Vue({
-        el:"#app",
-        data: function () {
-          return {
-            message: "グランパークをご利用のお客様は上記の注意事項をお守りの上、誓約書にご署名をお願い致します。",
-            persons: 0,
-            kids: 0
-          }
-        },
-        methods: {
-          onSubmit: function () {
-            // disable the submit button
-            $('#submitBtn').attr('disabled', true);
-
-            var data   = $(document.customer).serialize(),
-              action = document.customer.action;
-            
-            // send now an XHR
-            axios.post(action, data).then(function(response) {
-              if ( response.data.error )
-              {
-                swal('Oops..', response.data.error, 'error');
-              }
-              else
-              {
-                swal('Great!', 'Customer registred successfully.', 'success').then(function () {
-                  window.location.reload()
-                })
-              }
-
-              $('#submitBtn').attr('disabled', false);
-            }).catch(function(error){
-              swal('Oops..', error.response.data.error, 'error');
-            });
-          },
-          addPers: function () {
-            this.persons += 1
-          },
-          addKids: function () {
-            this.kids += 1
-          }
-        },
-        mounted: function () {
-          /*$('#datetimepicker').datetimepicker({
-            format: "YYYY-MM-DD",
-            useCurrent: false,
-            defaultDate: "1989-01-01",
-            viewMode: 'years'
-          })*/
-        }
-      })
-</script>
-
+<script src="src/js/main.js"></script>
+</body>
 </html>

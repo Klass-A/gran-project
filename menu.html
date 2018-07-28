@@ -43,13 +43,11 @@
   </nav>
 
 
-
   <!-- 02 - Menu -->
   <!-- - -->
-  <div id="main" class="container" style="padding: 8em 10px;">
+  <div id="main" class="container" style="padding: 8em 10px 4em;">
     <div id="menu" class="col-md-12">
-      
-      
+
       <div class="ribbon">
         <img src="src/img/ribbon2.png" alt="">
         <h1>フードメニュー</h1>
@@ -57,21 +55,30 @@
       
       <!-- First row -->
       <div class="row">
-		<div class="col-sm-3">
-			<div class="well thumbnail menu-item">
-				<p class="img"><img src="/public/uploads/products/19f41916a844f6c2.jpg" class="img-responsive"></p>
-				<div class="box-text">
-					<div class="description">
-						<p class="product-name text-center">カプチーノ</p>
-						<p class="txt">濃い3.6牛乳とエスプレッソが絶妙なバランスです。</p>
-						<p class="ingredients">drink</p>
-					</div>
-					<div class="price">
-						<p class="product-price text-center"><span>¥</span>300</p>
-					</div>
-				</div>
-			</div>
-		</div>
+    		<div class="col-sm-3">
+
+    			<div class="well thumbnail menu-item">
+    				<p class="img">
+              <img src="#" onerror="this.style.display='none'" class="img-responsive">
+            </p>
+    				<div class="box-text">
+    					<div class="description">
+    						<p class="product-name text-center">カプチーノ</p>
+                <!-- product description -->
+    						<p class="txt">濃い3.6牛乳とエスプレッソが絶妙なバランスです。</p>
+    						<div class="ing-box">
+                  <p class="ingredients drink">drink</p>
+                  <p class="ingredients food">food</p>
+                  <p class="ingredients dessert">dessert</p>      
+                </div>
+    					</div>
+    					<div class="price">
+    						<p class="product-price text-center"><span>¥</span>300</p>
+    					</div>
+    				</div>
+    			</div> <!-- menu-item -->
+
+    		</div>
       </div><!-- row -->
 
     </div>
@@ -82,8 +89,8 @@
   <!-- - -->
 <footer class="container text-center hidden-print">
     <a href="#myPage" title="To Top">
-    <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
-  </a>
+      <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+    </a>
     <ul class="list-inline">
         <li><a href="index.html">HOME</a></li>
         <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">BLOG</a></li>
@@ -105,7 +112,7 @@
       <div class="info text-center">
         <img src="src/img/logo2-1.png" style="width: auto;">
         <h4><a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i></a> 0248-94-6656</h4>
-        <!-- <a href="#"><img src="http://ae168exh56.smartrelease.jp/public/assets/img/reserve-btn.png" style="width: auto;"></a> -->
+        <!-- <a href="#"><img src="src/img/reserve-btn.png" style="width: auto;"></a> -->
         <p>© 2017 grön park cafe.</p>
         <ul class="list-inline">
           <li><a href="terms.html">利用規約</a></li>
@@ -118,6 +125,6 @@
 </div>
 
 
-<script type="text/javascript" src="src/js/main2.js"></script>
+<script type="text/javascript" src="src/js/main.js"></script>
 </body>
 </html>

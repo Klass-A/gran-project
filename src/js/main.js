@@ -2,16 +2,19 @@
 $(document).ready(function(){
 
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     var hash = this.hash;
 
 
     if ( this.hash == "#menu-section" || this.hash == "#floor-guide" || this.hash == "#news" ) {
 
       $('html, body').animate({scrollTop: $(hash).offset().top - 215}, 900)
-    };
+    }
+
+      // whenever a section is added, its id (#) should be added below
       else if (this.hash == "#contact") {$('html, body').animate({scrollTop: $(hash).offset().top - 350}, 900)}
       else if (this.hash == "#message") {$('html, body').animate({scrollTop: $(hash).offset().top}, 900)}
+      else if (this.hash == "#myPage") {$('html, body').animate({scrollTop: $(hash).offset().top}, 900)}
 
     console.log(this.hash)
 
@@ -31,5 +34,5 @@ $(document).ready(function(){
           }
       });
     });
-  }    
+  } // end if
 })

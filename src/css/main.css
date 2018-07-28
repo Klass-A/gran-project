@@ -964,7 +964,12 @@ box-shadow: 0px 0px 83px 0px #5d5d5d24;
   margin-bottom: 30px;
   -webkit-transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.4) transform,0.2s ease box-shadow,0.2s ease filter;
 }
-.menu-item  .img {margin: 0;}
+.menu-item .img {
+  margin: 0;
+  width: 100%;
+  background: #ececec;
+  min-height: 200px;
+}
 .menu-item:hover {
   box-shadow: 0 7px 8px rgba(188, 185, 174, 0.3);
 }
@@ -985,24 +990,34 @@ box-shadow: 0px 0px 83px 0px #5d5d5d24;
   font-size: 13px;
 }
 .box-text .ingredients {
-  font-size: 13px;
+  font-size: 11.5px;
   margin-top: 17px;
-
+  display: inline;
+  padding: 0.2em 0.5em 0.15em;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 400;
+  background: #ddd;
 }
+.ing-box {margin-top: 7px;}
+
+/*types colors*/
+.box-text .ingredients.food {background: #2f6d0c;}
+.box-text .ingredients.drink {background: #0003ff;}
+.box-text .ingredients.dessert {background: #ff9300;}
 
 /*menu item text*/
 .product-name {
   padding: 10px 0 5px;
-  font-size: 16px;
+  font-size: 1.1em;
   font-weight: bold;
   text-align: center;
   font-family: 繝｡繧､繝ｪ繧ｪ, Meiryo, "繝偵Λ繧ｮ繝手ｧ偵ざ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "�ｭ�ｳ �ｰ繧ｴ繧ｷ繝�け", "MS PGothic", sans-serif;
 }
 .product-price {
-  font-family: 'Crimson Text', serif;
-  font-size: 31px;
+  font: 300 29px/100% 'Crimson Text', serif;
   margin-bottom: 0;
-  margin-top: 5px;
+  margin-top: .5em;
   color: #5b7f2f;
 }
 .product-price span {
@@ -1031,121 +1046,6 @@ box-shadow: 0px 0px 83px 0px #5d5d5d24;
 .action-add{
   width: 100%;
 }
-
-/* ===================================
-   Privacy Policy & Terms of Use Pages
-   =================================== */
-
-/*Reset*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  line-height: 1.6;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-body {
-  background: #f1f2f6;
-  color: #555566;
-  font-family: "Montserrat", "Hiragino Kaku Gothic Pro";
-}
-
-.MAIN-COLUMN h1 {
-  margin: 0 12px 24px;
-  font-size: 171.42857%;
-  font-family: "繝｡繧､繝ｪ繧ｪ", Meiryo, "繝偵Λ繧ｮ繝手ｧ偵ざ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "�ｭ�ｳ �ｰ繧ｴ繧ｷ繝�け", "MS PGothic", sans-serif;
-  font-weight: bold;
-  background: url(http://media3.kddi.com/extlib/module/bg_page_01.gif) repeat-x left -200px;
-}
-.pbNested {
-  padding: 40px 0;
-    min-height: 0;
-    background: #f1f2f6;
-    color: #555566;
-    font-family: "Montserrat", "Hiragino Kaku Gothic Pro";
-}
-
-.MAIN-COLUMN .m_boxes1 {
-    position: relative;
-}
-.MAIN-COLUMN .box {
-    display: block !important;
-    overflow: hidden;
-    border-radius: 7px;
-    background: #fff!important;
-    margin: 0 12px 24px;
-    word-wrap: break-word;
-}
-.MAIN-COLUMN .hLevel2 {
-    border-bottom: 2px solid #1eace5;
-}
-.MAIN-COLUMN .hLevel2 {
-    position: relative;
-    display: block;
-    line-height: 20px;
-    padding: 15px 0;
-    font-size: 114.28571%;
-    z-index: 5;
-    border-radius: 7px 7px 0 0;
-    overflow: hidden;
-    zoom: 1;
-}
-.MAIN-COLUMN .hLevel2 h2 {
-    background: url(http://media3.kddi.com/extlib/corporate/module/bg_h2Link.gif) no-repeat 15px top;
-}
-.MAIN-COLUMN .hLevel2 h2 {
-    float: left;
-    padding: 0 15px 0 36px;
-    min-height: 24px;
-    line-height: 24px;
-    font-family: "繝｡繧､繝ｪ繧ｪ", Meiryo, "繝偵Λ繧ｮ繝手ｧ偵ざ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "�ｭ�ｳ �ｰ繧ｴ繧ｷ繝�け", "MS PGothic", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0;
-}
-.MAIN-COLUMN .ind {
-    padding: 18px 15px 3px 15px;
-    zoom: 1;
-}
-.MAIN-COLUMN .box .listVerticalDotIn, .MAIN-COLUMN .m_borderBox .listVerticalDotIn, .MAIN-COLUMN .m_borderConversion .listVerticalDotIn {
-padding: 0 3px 5px 3px;
-}
-.MAIN-COLUMN .ind p {
-    margin: 0 0 15px;
-    font-size: 14.5px;
-}
-.MAIN-COLUMN .box .listVerticalNumIn, .MAIN-COLUMN .m_borderBox .listVerticalNumIn, .MAIN-COLUMN .m_borderConversion .listVerticalNumIn {
-    padding: 0 3px 5px 25px;
-    list-style-type: decimal;
-}
-.MAIN-COLUMN .box .listVerticalNumIn li, .MAIN-COLUMN .m_borderBox .listVerticalNumIn li, .MAIN-COLUMN .m_borderConversion .listVerticalNumIn li {
-    margin-bottom: 10px;
-    font-size: 14.5px;
-}
-.MAIN-COLUMN .box .listVerticalDotIn > li, .MAIN-COLUMN .m_borderBox .listVerticalDotIn > li, .MAIN-COLUMN .m_borderConversion .listVerticalDotIn > li {
-  margin-bottom: 10px;
-    padding-left: 15px;
-    background: url(http://media3.kddi.com/extlib/module/icon_dot_03.gif) no-repeat left 9px;
-    list-style: none;
-}
-.MAIN-COLUMN .hLevel3 {
-    padding: 0 2px 10px;
-    margin: 25px 0 15px;
-    font-size: 16px;
-    font-weight: bold;
-}
-.MAIN-COLUMN .hLevel3 {
-    border-bottom: 1px solid #1eace5;
-}
-.MAIN-COLUMN .hLevel3:first-child {
-    margin-top: 0;
-}
-
-/* ===================================
-   =================================== */
 
 #more_fields {
   border: none;
@@ -1226,6 +1126,137 @@ padding: 0 3px 5px 3px;
 footer .list-inline>li {
     padding: 0 30px;
 }
+
+
+/* ===============
+   Gallery Styling
+   ===============*/
+.fancybox-custom .fancybox-skin {
+  box-shadow: 0 0 50px #222;
+}
+.img-box {
+  background: #fff;
+    padding: 4px;
+    box-shadow: 0px 1px 2px #999;
+}
+.img-box img {
+  width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+.box-wrapper {
+  padding: 10px;
+}
+.MAIN-COLUMN .gallery-wrapper {
+  padding: 0 7px;
+  background: transparent!important;
+}
+.fancybox-wrap, .fancybox-desktop, .fancybox-type-image, .fancybox-opened {
+  position: absolute;
+    top: 70px!important;
+}
+.banner img {
+  height: 430px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* ===================================
+   Privacy Policy & Terms of Use Pages
+   =================================== */
+
+.MAIN-COLUMN h1 {
+  margin: 0 12px 24px;
+  font-size: 171.42857%;
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: bold;
+  background: url(https://media3.kddi.com/extlib/module/bg_page_01.gif) repeat-x left -200px;
+}
+.pbNested {
+  padding: 40px 0;
+    min-height: 0;
+    background: #f1f2f6;
+    color: #555566;
+    font-family: "Montserrat", "Hiragino Kaku Gothic Pro";
+}
+
+.MAIN-COLUMN .m_boxes1 {
+    position: relative;
+}
+.MAIN-COLUMN .box {
+    display: block !important;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #fff!important;
+    margin: 0 12px 24px;
+    word-wrap: break-word;
+}
+
+.MAIN-COLUMN .hLevel2 {
+    border-bottom: 2px solid #1eace5;
+    position: relative;
+    display: block;
+    line-height: 20px;
+    padding: 15px 0;
+    font-size: 114.28571%;
+    z-index: 5;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+    zoom: 1;
+}
+.MAIN-COLUMN .hLevel2 h2 {
+    background: url(https://media3.kddi.com/extlib/corporate/module/bg_h2Link.gif) no-repeat 15px top;
+    float: left;
+    padding: 0 15px 0 36px;
+    min-height: 24px;
+    line-height: 24px;
+    font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+.MAIN-COLUMN .ind {
+    padding: 18px 15px 3px 15px;
+    zoom: 1;
+}
+.MAIN-COLUMN .box .listVerticalDotIn, .MAIN-COLUMN .m_borderBox .listVerticalDotIn, .MAIN-COLUMN .m_borderConversion .listVerticalDotIn {
+padding: 0 3px 5px 3px;
+}
+.MAIN-COLUMN .ind p {
+    margin: 0 0 15px;
+    font-size: 14.5px;
+}
+.MAIN-COLUMN .box .listVerticalNumIn, .MAIN-COLUMN .m_borderBox .listVerticalNumIn, .MAIN-COLUMN .m_borderConversion .listVerticalNumIn {
+    padding: 0 3px 5px 25px;
+    list-style-type: decimal;
+}
+.MAIN-COLUMN .box .listVerticalNumIn li, .MAIN-COLUMN .m_borderBox .listVerticalNumIn li, .MAIN-COLUMN .m_borderConversion .listVerticalNumIn li {
+    margin-bottom: 10px;
+    font-size: 14.5px;
+}
+.MAIN-COLUMN .box .listVerticalDotIn > li, .MAIN-COLUMN .m_borderBox .listVerticalDotIn > li, .MAIN-COLUMN .m_borderConversion .listVerticalDotIn > li {
+  margin-bottom: 10px;
+    padding-left: 15px;
+    background: url(https://media3.kddi.com/extlib/module/icon_dot_03.gif) no-repeat left 9px;
+    list-style: none;
+}
+.MAIN-COLUMN .hLevel3 {
+    padding: 0 2px 10px;
+    margin: 25px 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.MAIN-COLUMN .hLevel3 {
+    border-bottom: 1px solid #1eace5;
+}
+.MAIN-COLUMN .hLevel3:first-child {
+    margin-top: 0;
+}
+
+/* ===================================
+   =================================== */
+
 
 
 /* Helper Classes*/

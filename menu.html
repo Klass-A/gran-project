@@ -1,4 +1,6 @@
-
+<?php ####  /gran/menus.html : グランパーク、メニュー
+  require_once $_SERVER['DOCUMENT_ROOT'] . "/../php/gran/menus.php";
+?>
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -12,7 +14,8 @@
   <link rel="stylesheet" type="text/css" href="src/css/main.css">
   <script src="src/js/jquery.min.js"></script>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="onLoad( );">
 <div id="app">
   <!-- 01 - Navbar -->
   <!-- - -->
@@ -32,7 +35,7 @@
         <li><a href="menu.html">menu</a></li>
         <li><a href="company.html">company</a></li>
         <li><a href="privacy.html">privacy</a></li>
-        <li><a href="terms.html">terms</a></li>
+        <li><a href="signup.html">terms</a></li>
         <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">news</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-left">
@@ -55,30 +58,45 @@
       
       <!-- First row -->
       <div class="row">
+        <?php
+          $i = 0;
+          foreach ( $aWare as $ware ) {
+            $i += 1;
+        ?>
     		<div class="col-sm-3">
-
     			<div class="well thumbnail menu-item">
     				<p class="img">
-              <img src="#" onerror="this.style.display='none'" class="img-responsive">
+              <img src="/gran/api/wpicture.php?wcode=<?=x( $ware['wcode'] )?>" onerror="this.style.display='none'" class="img-responsive">
             </p>
     				<div class="box-text">
     					<div class="description">
-    						<p class="product-name text-center">カプチーノ</p>
+                <!-- product name -->
+    						<p class="product-name text-center">
+                    <?=x( $ware['wname'] )?>
+                </p>
                 <!-- product description -->
-    						<p class="txt">濃い3.6牛乳とエスプレッソが絶妙なバランスです。</p>
+    						<p class="txt">
+                    <?=x( $ware['wdesc'] )?>      
+                </p>
     						<div class="ing-box">
-                  <p class="ingredients drink">drink</p>
-                  <p class="ingredients food">food</p>
-                  <p class="ingredients dessert">dessert</p>      
+                  <p class="ingredients">
+                    <?=x( $ware['tname'] )?>
+                  </p>      
                 </div>
     					</div>
     					<div class="price">
-    						<p class="product-price text-center"><span>¥</span>300</p>
+    						<p class="product-price text-center">
+                  <span>¥</span>
+                  <?=x( $ware['wprice'] )?>
+                </p>
     					</div>
     				</div>
-    			</div> <!-- menu-item -->
 
-    		</div>
+    			</div> <!-- menu-item -->
+    		</div> <!-- col-sm-3 -->
+
+        <?php } ?>
+
       </div><!-- row -->
 
     </div>
@@ -94,7 +112,7 @@
     <ul class="list-inline">
         <li><a href="index.html">HOME</a></li>
         <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">BLOG</a></li>
-        <li><a href="about.html">施設案内</a></li>
+        <li><a href="guide.html">施設案内</a></li>
         <li><a href="menu.html">メニュー</a></li>
     </ul>
 </footer>
@@ -115,7 +133,7 @@
         <!-- <a href="#"><img src="src/img/reserve-btn.png" style="width: auto;"></a> -->
         <p>© 2017 grön park cafe.</p>
         <ul class="list-inline">
-          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="signup.html">利用規約</a></li>
           <li><a href="company.html">会社</a></li>
           <li><a href="privacy.html">プライバシーポリシー</a></li>
         </ul>

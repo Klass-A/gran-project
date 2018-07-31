@@ -1,0 +1,463 @@
+<?php ####  /gran/signup.html : グランパーク、メンバー登録ページ
+  require_once $_SERVER['DOCUMENT_ROOT'] . "/../php/gran/signup.php";
+?>
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <title>grön park cafe | Terms of Services</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="src/css/animate.min.css">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/font-awesome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="src/css/jssocials.css" />
+    <link rel="stylesheet" href="src/css/jssocials-theme-flat.css" />
+    <link rel="stylesheet" href="src/css/main.css">
+    
+    <!-- JS Files -->
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/jssocials.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <!-- 01 - Navbar -->
+    <!-- - -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+                <a class="navbar-brand" href="index.html"><img src="src/img/home.png"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">home</a></li>
+        <li><a href="menu.html">menu</a></li>
+        <li><a href="company.html">company</a></li>
+        <li><a href="privacy.html">privacy</a></li>
+        <li><a href="signup.html">terms</a></li>
+        <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">news</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/application/_a/">mypage <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <br><br>
+    <br><br>
+    <br><br>
+
+
+    <!-- Terms of Services -->
+<div class="pbNested MAIN-COLUMN container">
+    <div class="pbBlock pbBlockBase col-md-10 col-md-offset-1">
+        <!-- Section 1 -->
+
+        <!-- KEEP -->
+        <div class="m_boxes1">
+
+          <div class="row" id="app">
+              <!-- Form -->
+              <div class="m_boxes1">
+                  <section class="box">
+                      <div class="ind">
+                          <p>グランパークをご利用のお客様は上記の利用規約をお守りの上、誓約書にご署名をお願い致します。</p>
+                          <div class="row">
+                              <form id="form" name="customer" class="form-horizontal col-sm-10 hidden-print" role="form" action="#">
+                                  <fieldset>
+                                      <legend style="margin: 0 0 20px 10px;">《誓約書》</legend>
+                                      <input type="hidden" name="type" value="mobile" placeholder="">
+
+                                      <!-- Email Address -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="email">メールアドレス</label>
+                                          <div class="col-sm-8">
+                                              <input required type="email" class="form-control" name="cmail" value="<?=x( $cmail )?>">
+                                          </div>
+                                      </div>
+
+                                      <!-- phone number -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="phone">電話番号</label>
+                                          <div class="col-sm-8">
+                                              <input type="tel" class="form-control" name="tel" required placeholder="0248-94-6656" value="<?=x( $tel )?>" placeholder="電話番号">
+                                          </div>
+                                      </div>
+
+                                      <!-- Password -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="password">パスワード</label>
+                                          <div class="col-sm-8">
+                                              <input required type="text" class="form-control" name="cpass" id="cpass" placeholder="パスワード" value="<?=x( $cpass )?>">
+                                          </div>
+                                      </div>
+
+                                      <!-- postal/zip code -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="post">郵便番号</label>
+                                          <div class="col-sm-3">
+                                              〒
+                                              <input type="tel" name="zip1" required size="4" maxlength="3" placeholder="962" value="<?=x( $zip1 )?>">
+                                              -
+                                              <input type="tel" name="zip2" required size="5" maxlength="4" placeholder="0868" value="<?=x( $zip2 )?>">
+                                              <br><br>
+                                              <button type="button" id="btnAddress" class="btn btn-default">住所を自動入力</button>
+                                          </div>
+                                      </div>
+
+                                      <!-- Street address -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="address">ご住所</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" name="adr1" class="form-control" required placeholder="例：福島県須賀川市芦田塚59-1" value="<?=x( $adr1 )?>">
+                                          </div>
+                                      </div>
+
+                                      <!-- Building name [optional] -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="address">（建物名）</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" name="adr1" class="form-control" placeholder="アパート・マンション名等" value="<?=x( $adr2 )?>">
+                                          </div>
+                                      </div>
+
+                                      <!-- Fax number [optional] -->
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label" for="phone">（ファックス番号）</label>
+                                          <div class="col-sm-8">
+                                              <input type="tel" class="form-control" name="fax" value="<?=x( $fax )?>">
+                                          </div>
+                                      </div>
+
+
+
+                                      <?php ################  ▽家族全体を囲むdiv  ################ ?>
+                                      <div id="family">
+
+                                        <?php ################  ▽家族一人分のdiv  ################ ?>
+                                        
+                                        <?php for ( $i = 0 ; $i < count( $aCname ) ; $i ++ ) { ?>
+                                        
+                                        <div class="newFamDiv">
+                                          <hr>
+                                            <div class="SideBySide form-group" >
+                                              <span class="col-sm-4">
+                                                <em>ご本人</em>
+                                                <button type="button" class="btn btn-danger" style="display:none;" onclick="delPerson( this );">削除</button>
+                                              </span>
+                                            </div>
+
+                                            <div class="SideBySide form-group" >
+                                              <span ></span>
+                                              <label class="col-sm-4">お名前(漢字) <span class="req-field">必須</span></label>
+                                              <span style="" class="col-sm-8">
+                                                <input type="text" class="form-control" name="cname[]" required value="<?=x( $aCname[$i] )?>">
+                                              </span>
+                                            </div>
+
+                                            <div class="SideBySide form-group" >
+                                              <span ></span>
+                                              <label class="col-sm-4">お名前(かな) <span class="req-field">必須</span></label>
+                                              <span style="" class="col-sm-8">
+                                                <input type="text" class="form-control" name="chira[]" required value="<?=x( $aChira[$i] )?>">
+                                              </span>
+                                            </div>
+
+                                            <div class="SideBySide form-group" >
+                                              <span ></span>
+                                              <label class="col-sm-4">誕生日 <span class="req-field">必須</span></label>
+                                              <span style="" class="col-sm-8">
+                                                <input type="date" class="form-control" name="birth[]" required value="<?=x( $aBirth[$i] )?>">
+                                              </span>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                        <?php ################  △家族一人分のdiv  ################ ?>
+
+                                      </div>
+                                      <?php ################  △家族全体を囲むdiv  ################ ?>
+
+
+                                      <hr>
+                                      <div style="padding-left: 15px;">
+                                        <button type="button" class="btn btn-primary" id="btnAddFamily"  onclick="addFamily( )">ご家族追加</button>
+                                      </div>
+                                      <div style="padding-left: 15px;text-align:right;">
+                                        <input type="submit" class="btn btn-success" value="登録">
+                                        <br>
+                                      </div>
+                                  </fieldset>
+                              </form>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+          </div>
+          <!-- row -->
+
+
+          <div class="row">
+            <div class="pbBlock pbTitleBlock barGray">
+                <h1 style="line-height: 1.6; padding: 31px 0px; padding-left: 30px; height: auto;">利用規約</h1>
+            </div>
+          </div>
+
+
+          <div class="row">
+              <section class="box">
+
+                  <header class="hLevel2">
+                      <h2>グランパークをご利用頂く際の注意事項、及び利用規約</h2>
+                  </header>
+                  <div class="ind">
+                      <p>安全にご利用を頂くために必ずお読みください（利用規約）</p>
+
+                      <div class="ind">
+                          <ul class="listVerticalDotIn">
+                              <li>当店はお子様連れのご利用を対象とした「親子カフェ」になりますので、ご入店には18歳以上の保護者の方の同伴が必要となります。</li>
+                              <li>スタッフがおりますが、お預かりではございませんので予めご了承ください。（一人遊びが出来ない年齢のお子様は保護者のつきそいをお願いいたします。）</li>
+                              <li>施設内外及び駐車スペースでお子様が危険な行動を取っていた際には、必ずご注意をお願いいたします。</li>
+                              <li>他のお子様との喧嘩等もお気づきになりましたらお声掛けをお願いいたします。</li>
+                              <li>お子様の健康状態について、当日熱がある場合、微熱であってもご利用いただけません。</li>
+                              <li>お子様の病気を隠して利用された場合、お子様の容体が悪化しても責任は負いかねます。</li>
+                              <li>風邪症状、感染の疑いがあるお子様は、他のお子様への感染予防の為、ご利用いただけません。</li>
+                              <li>ノロウイルス、インフルエンザ、おたふく、水疱瘡など感染の可能性がある病気のお子さまについても同様 にご遠慮下さい。</li>
+
+                              <li>当キッズスペースで病状が悪化した、他のお子様から病気がうつったなどの責任も負いかねます。</li>
+                              <li>おもちゃ等のお持ち込みは可能ですが紛失等のトラブルがない様、全てにお名前の記入をお願いいたします。</li>
+                              <li>パンツトレーニング中のお子様でもキッズスペース『木ごこち広場』の利用時はオムツの着用をお願いいたします。</li>
+                              <li>店内で発生したゴミは所定のゴミ箱へ捨てて下さい。店外からのゴミは全てお持ち帰り下さい。</li>
+                              <li>利用者同士のトラブルは、当事者同士での解決をお願いいたします。</li>
+                              <li>遊具には無理な力を加えたり、不適切な遊びをしないよう、保護者の方からご注意をお願いいたします。</li>
+                              <li>店内の設備、器具やおもちゃ等の備品を破損、紛失してしまった場合は、補修、補填に要した費用をご請求 させて頂く場合がございます。</li>
+                              <li>ゲームの持ち込みも可能ですが、大音量の使用も同様に注意をお願いいたします。また、スタッフが注意さ せて頂く場合もございます。</li>
+                              <li>メニューによっては熱い飲み物、食べ物があります。飲食をする場所を走り回ってしまいますと危険です。</li>
+                              <li>遊具でのすり傷及び他の幼児との遊びの最中において軽い傷等、店内外及び駐車スペース利用時に発生した 事故、ケガ、盗難の責任は一切負いかねますので自己責任としてご利用頂きますよう、ご理解をお願いいた します。</li>
+                              <li>店内は全て禁煙となっております。また、ペット類を連れての入店はお断りいたします。</li>
+
+                          </ul>
+                      </div>
+                  </div>
+              </section>
+          </div>
+          <!-- row -->
+
+
+          <div class="row">
+              <!-- Section -->
+              <div class="m_boxes1">
+                  <section class="box">
+                      <header class="hLevel2">
+                          <h2>0歳専用コーナー□0</h2>
+                      </header>
+                      <div class="ind">
+                          <ul class="listVerticalDotIn">
+                              <li>0カ月から１２カ月の赤ちゃんと保護者様専用スペースです。</li>
+                              <li>１２カ月を過ぎたお子様は入れませんので、ご注意ください。</li>
+                              <li>お子様がなめてしまったおもちゃは専用の箱に入れてください。</li>
+                              <li>使用後のおもちゃは、ご返却カゴに入れて下さい。</li>
+                          </ul>
+                      </div>
+                  </section>
+              </div>
+          </div>
+
+
+          <div class="row">
+              <!-- Section -->
+              <div class="m_boxes1">
+                  <section class="box">
+                      <header class="hLevel2">
+                          <h2>丸太アスレチック</h2>
+                      </header>
+                      <div class="ind">
+                          <p>安全にご利用を頂くために必ずお読みください（利用規約）</p>
+
+                          <div class="ind">
+                              <ul class="listVerticalDotIn">
+                                  <li>お客様の同意がある場合。</li>
+                                  <li>下で遊んでいる方が怪我をされないようアスレチックを利用される方は 　 手荷物やおもちゃなどを持って上がらないで下さい。</li>
+                                  <li>一人で遊べない年齢のお子様は保護者の同伴をお願いいたします。</li>
+                                  <li>怪我や事故の予防のため遊具には無理な力を加えたり、 　危険な遊びをしないようご協力をお願いいたします。
+                                  </li>
+                                  <li>アスレチックネットへの飛び込み及びジャンプ行為はご遠慮ください。</li>
+                                  <li>体重制限。100㌔以上の方はご利用になれません。</li>
+                              </ul>
+                          </div>
+                  </section>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <!-- Section -->
+                  <div class="m_boxes1">
+                      <section class="box">
+                          <header class="hLevel2">
+                              <h2>＜授乳室ご利用について＞ </h2>
+                          </header>
+
+                          <div class="ind">
+                              <ul class="listVerticalDotIn">
+                                  <li>この授乳室は赤ちゃんをお連れのお母様専用の施設です。<br>- 男性の方の入室はご遠慮ください。</li>
+                                  <li>恐れ入りますが譲り合ってのご利用をお願いいたします。</li>
+                                  <li>ご飲食はご遠慮ください。 </li>
+                              </ul>
+                          </div>
+                      </section>
+                  </div><br>
+              </div>
+          </div>
+
+
+              <div class="m_boxes1">
+                   <p style="text-align: center;">このページからのご利用申込は、現在準備中です。</p>
+              </div>
+              <!-- forms container -->
+
+              <!-- Social Icons & print -->
+              <div class="social">
+                  <div id="share" class="text-center hidden-print"></div><br>
+                  <div class="print text-center hidden-print">
+                      <a onclick="pagePrint()" href="" class="print">印刷する <i class="fa fa-print" aria-hidden="true"></i></a>
+                  </div>
+              </div>
+            </ul>
+        </div>
+
+    </div>
+    </section>
+
+</div>
+</div>
+<!-- row -->
+</div>
+</div>
+<!-- container -->
+
+<script>
+    // Social Share
+    $("#share").jsSocials({
+        shares: ["email", "twitter", "facebook", "linkedin", "pinterest"]
+    });
+  
+    // Print window
+    function pagePrint() {
+        window.print();
+    }
+</script>
+
+
+<!-- 09 - Footer Nav -->
+<!-- - -->
+<footer class="container text-center hidden-print">
+    <a href="#myPage" title="To Top">
+      <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+    </a>
+    <ul class="list-inline">
+        <li><a href="index.html">HOME</a></li>
+        <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">BLOG</a></li>
+        <li><a href="guide.html">施設案内</a></li>
+        <li><a href="menu.html">メニュー</a></li>
+    </ul>
+</footer>
+
+
+<!-- 10 - Wide Bottom Img & Info -->
+<!-- - -->
+<div class="container-fluid bottom-img hidden-print">
+    <div class="row">
+        <img class="wide-img" src="src/img/footer-img.jpg">
+    </div>
+
+    <div class="row bottom-footer">
+        <div class="info text-center">
+            <img src="src/img/logo2-1.png" style="width: auto;">
+            <h4><a href=""><i class="fa fa-phone-square" aria-hidden="true"></i></a> 0248-94-6656</h4>
+            <p>© 2017 grön park cafe.</p>
+            <ul class="list-inline">
+                <li><a href="signup.html">利用規約</a></li>
+                <li><a href="company.html">会社</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+            </ul>
+        </div>
+    </div>
+</div> <!-- container -->
+
+<!-- JS Files -->
+<?php #### 住所検索に使用 #### ?>
+<script src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+<script src="src/js/bootstrap.min.js"></script>
+<!-- Application main.js -->
+<script src="src/js/main.js"></script>
+
+<script>
+
+  <?php ####  ページ読み込み完了直後の処理 ?>
+  window.onload = function( ) {
+
+    //  郵便番号自動検索
+    $('[name=zip1]').jpostal({
+      click : '#btnAddress',
+      postcode : [
+        '[name=zip1]',  //郵便番号1
+        '[name=zip2]'   //郵便番号2
+      ],
+      address : {
+        '[name=adr1]'  : '%3%4%5%6%7',  // 3都道府県 4市区町村 5町域 6大口事業所の番地 7大口事業所の名称
+      }
+    });
+
+    document.frm.agree.focus( );
+  }
+
+  <?php ##  家族欄を追加する。 ?>
+  function addFamily( ) {
+
+    <?php ##  家族全体枠要素を取得する。 ?>
+    var eFamily = document.getElementById( "family" );
+
+    <?php ##  最初の家族枠を取得して複製する。 ?>
+    var ePerson = family.firstElementChild.cloneNode( true );
+
+    <?php ##  valueをクリアする。（補足：get…ではHTMLCollectionが返ってきてforEachが使えないので、配列に変換する。） ?>
+    var aeInput = Array.prototype.slice.call( ePerson.getElementsByTagName( "input" ) );
+    aeInput.forEach( function( eInput ) {
+      eInput.value = '';
+    });
+
+    <?php ##  「ご本人」表示（唯一のem）を取得して削除する。 ?>
+    var eEm = ePerson.getElementsByTagName( "em" )[0];
+    eEm.parentNode.removeChild( eEm );
+
+    <?php ##  隠してある「削除」ボタン（唯一のbutton）を取得して表示する。 ?>
+    var eBtn = ePerson.getElementsByTagName( "button" )[0];
+    eBtn.style.display = '';
+
+    <?php ##  家族全体枠に追加する。 ?>
+    family.appendChild( ePerson );
+  }
+
+  <?php ##  家族欄を削除する。 ?>
+  function delPerson( btnDel ) {
+
+    var ePerson = btnDel.parentNode.parentNode.parentNode;
+
+    var family = document.getElementById( "family" );
+    family.removeChild( ePerson );
+  }
+
+</script>
+</body>
+</html>

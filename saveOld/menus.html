@@ -1,0 +1,146 @@
+<?php ####	/gran/menus.html : グランパーク、メニュー
+	require_once $_SERVER['DOCUMENT_ROOT'] . "/../php/gran/menus.php";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>メニュー</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/gran/css/gran.css">
+	<link rel="stylesheet" href="/gran/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="height:100%;" onload="onLoad( );">
+
+
+	<!-- 01 - Navbar -->
+    <!-- - -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+                <a class="navbar-brand" href="index.html">
+                	<img src="./img/home.png" alt="">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">home</a></li>
+			        <li><a href="#">menu</a></li>
+			        <li><a href="#">company</a></li>
+			        <li><a href="#">privacy</a></li>
+			        <li><a href="#">terms</a></li>
+			        <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">news</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">mypage <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <br><br>
+
+    <div class="container" id="menu">
+
+    	<!-- <div class="SideBySide">
+			<h1>Granpark</h1>
+			<h2>メニュー</h2>
+		</div> -->
+
+    	<div class="ribbon">
+    		<img src="https://ae168exh56.smartrelease.jp/public/assets/img/ribbon2.png" alt="">
+    		<h1>フードメニュー</h1>
+    	</div>
+
+		<div class="SideBySide">
+
+				<?php
+					$i = 0;
+				 	foreach ( $aWare as $ware ) {
+						$i += 1;
+				?>
+					<div class="col-sm-3">
+						<div>
+				<?php
+						if ( is_null( $ware['wpicture'] ) ) {
+				?>
+							<img style="width: 100%" src="/gran/img/NoImage.jpg">
+				<?php
+						} else {
+				?>
+							<img style="width: 100%" src="/gran/api/wpicture.php?wcode=<?=x( $ware['wcode'] )?>">
+				<?php
+						}
+				?>
+						</div>
+
+						<div class="box-text">
+							<div class="description">
+								<p class="product-name text-center"><?=x( $ware['wname'] )?></p>
+								<p class="txt"><?=x( $ware['wdesc'] )?></p>
+								<p class="ingredients"><?=x( $ware['tname'] )?></p>
+							</div>
+							<div class="price">
+								<p class="product-price text-center">¥<?=x( $ware['wprice'] )?></p>
+							</div>
+						</div>
+					</div>
+				<?php
+					}
+				?>
+
+		</div>
+
+    </div>
+
+	<br><br>
+
+
+	<!-- 09 - Footer Nav -->
+	<!-- - -->
+	<footer class="container text-center hidden-print">
+	    <a href="#myPage" title="To Top">
+	      <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	    </a>
+	    <ul class="list-inline">
+	        <li><a href="#">HOME</a></li>
+	        <li><a target="_blank" href="https://granpark.kiraku.biz/blog/">BLOG</a></li>
+	        <li><a href="#">施設案内</a></li>
+	        <li><a href="#">メニュー</a></li>
+	    </ul>
+	</footer>
+
+
+	<!-- 10 - Wide Bottom Img & Info -->
+	<!-- - -->
+	<div class="container-fluid bottom-img hidden-print">
+	    <div class="row">
+	        <img class="wide-img" src="./img/bottom-img.png">
+	    </div>
+
+	    <div class="row bottom-footer">
+	        <div class="info text-center">
+	            <img src="./img/logo2-1.png" style="width: auto;">
+	            <h4><a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i></a> 0248-94-6656</h4>
+	            <p>© 2017 gron park cafe.</p>
+	            <ul class="list-inline">
+	                <li><a href="signup.html">利用規約</a></li>
+	                <li><a href="#>">会社</a></li>
+	                <li><a href="#>">プライバシーポリシー</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+
+</body>
+<script>
+</script>
+</html>

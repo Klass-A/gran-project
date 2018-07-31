@@ -11,14 +11,14 @@ $(document).ready(function(){
       $('html, body').animate({scrollTop: $(hash).offset().top - 215}, 900)
     }
 
-      // whenever a section is added, its id (#) should be added below
-      else if (this.hash == "#contact") {$('html, body').animate({scrollTop: $(hash).offset().top - 350}, 900)}
-      else if (this.hash == "#message") {$('html, body').animate({scrollTop: $(hash).offset().top}, 900)}
-      else if (this.hash == "#myPage") {$('html, body').animate({scrollTop: $(hash).offset().top}, 900)}
+      // whenever a section is added, its section id (#) should be added below
+      else if (this.hash == "#contact") {$('html, body').animate({scrollTop: $(hash).offset().top - 367}, 900)}
+      else if (this.hash == "#message" || this.hash == "#myPage") {$('html, body').animate({scrollTop: $(hash).offset().top}, 900)}
 
     console.log(this.hash)
 
     window.location.hash = hash;
+
   });
   
 

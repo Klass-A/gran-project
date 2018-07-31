@@ -192,6 +192,8 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	background: #00000080;
+	background: rgba(0, 0, 0, 0.5019607843137255);
 }
 
 .fancybox-lock .fancybox-overlay {

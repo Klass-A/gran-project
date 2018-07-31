@@ -440,7 +440,7 @@ li a {color: #222}
 
 .form-horizontal .control-label {
   font-size: 14px;
-  color: #333;
+  color: #505050;
 }
 
 /* Mail Form */
@@ -941,7 +941,7 @@ box-shadow: 0px 0px 83px 0px #5d5d5d24;
 }
 
 /*menu list header*/
-#menu h1 {
+#menu .ribbon h1 {
   margin-left: 30px;
   font-size: 32px;
   font-weight: bold;
@@ -949,7 +949,7 @@ box-shadow: 0px 0px 83px 0px #5d5d5d24;
   color: #fff;
   position: relative;
   left: -370px;
-  top: -75px;
+  top: 22px;
   font-family: 繝｡繧､繝ｪ繧ｪ, Meiryo, "繝偵Λ繧ｮ繝手ｧ偵ざ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "�ｭ�ｳ �ｰ繧ｴ繧ｷ繝�け", "MS PGothic", sans-serif;
 }
 
@@ -1009,7 +1009,7 @@ box-shadow: 0px 0px 83px 0px #5d5d5d24;
 /*menu item text*/
 .product-name {
   padding: 10px 0 5px;
-  font-size: 1.1em;
+  font-size: 1.15em;
   font-weight: bold;
   text-align: center;
   font-family: 繝｡繧､繝ｪ繧ｪ, Meiryo, "繝偵Λ繧ｮ繝手ｧ偵ざ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "�ｭ�ｳ �ｰ繧ｴ繧ｷ繝�け", "MS PGothic", sans-serif;
@@ -1149,7 +1149,7 @@ footer .list-inline>li {
 }
 .MAIN-COLUMN .gallery-wrapper {
   padding: 0 7px;
-  background: transparent!important;
+  background: none!important;
 }
 .fancybox-wrap, .fancybox-desktop, .fancybox-type-image, .fancybox-opened {
   position: absolute;
